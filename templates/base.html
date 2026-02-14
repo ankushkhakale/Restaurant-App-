@@ -11,12 +11,12 @@
 
 <body>
     <header>
-        <div class="container">
-            <h1>Restaurant App</h1>
+        <div class="container header-content">
+            <a href="/" class="logo">🍽️ Gourmet Haven</a>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/menu/">Menu</a></li>
+                    <li><a href="{% url 'menu_list' %}">Menu</a></li>
                     <li><a href="/admin/">Admin</a></li>
                 </ul>
             </nav>
@@ -29,7 +29,26 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Restaurant App</p>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Serving delicious meals with passion since 2026. Experience the taste of excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📍 123 Foodie Lane, Flavor Town</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ hello@gourmethaven.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Mon-Fri: 11am - 10pm</p>
+                <p>Sat-Sun: 10am - 11pm</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Gourmet Haven. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 
