@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Restaurant App{% endblock %}</title>
+    <title>{% block title %}Gourmet Haven | Exceptional Dining{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -12,7 +20,7 @@
 <body>
     <header>
         <div class="container header-content">
-            <a href="/" class="logo">🍽️ Gourmet Haven</a>
+            <a href="/" class="logo">GOURMET HAVEN</a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
@@ -29,25 +37,32 @@
     </main>
 
     <footer>
-        <div class="container footer-content">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Serving delicious meals with passion since 2026. Experience the taste of excellence.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <a href="/" class="logo" style="margin-bottom: 2rem; display: block;">GOURMET HAVEN</a>
+                    <p>Serving meticulous craft and seasonal flavors since 2026. Join us for an unforgettable culinary
+                        journey.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📍 123 Artisan Ave, Flavortown</li>
+                        <li>📞 (555) 123-4567</li>
+                        <li>✉️ reservations@gourmethaven.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Experience</h3>
+                    <ul>
+                        <li>Mon–Fri: 17:00 – 22:00</li>
+                        <li>Sat–Sun: 12:00 – 23:00</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>📍 123 Foodie Lane, Flavor Town</p>
-                <p>📞 (555) 123-4567</p>
-                <p>✉️ hello@gourmethaven.com</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GOURMET HAVEN. ALL RIGHTS RESERVED.</p>
             </div>
-            <div class="footer-section">
-                <h3>Hours</h3>
-                <p>Mon-Fri: 11am - 10pm</p>
-                <p>Sat-Sun: 10am - 11pm</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Gourmet Haven. All rights reserved.</p>
         </div>
     </footer>
 </body>
