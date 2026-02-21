@@ -1,31 +1,41 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ item.name }} - Restaurant App{% endblock %}
+{% block title %}{{ item.name }} | Gourmet Haven{% endblock %}
 
 {% block content %}
-<div class="item-detail-container">
-    <a href="{% url 'menu_list' %}" class="back-link">&larr; Back to Menu</a>
-
-    <div class="item-detail-card">
-        {% if item.image %}
-        <div class="item-image-container">
-            <img src="{{ item.image.url }}" alt="{{ item.name }}" class="detail-image">
+<div class="container">
+    <div class="item-detail">
+        <div class="detail-img">
+            {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.name }}">
+            {% else %}
+            <div
+                style="width:100%; height:80vh; background:#222; display:flex; align-items:center; justify-content:center; color:#444; font-size:10rem;">
+                🍽️</div>
+            {% endif %}
         </div>
-        {% endif %}
 
-        <div class="item-info">
+        <div class="detail-info">
+            <span class="detail-category">{{ item.category.name }}</span>
             <h1>{{ item.name }}</h1>
-            <p class="category-tag">{{ item.category.name }}</p>
-            <p class="price-large">${{ item.price }}</p>
-            <p class="description-large">{{ item.description }}</p>
+            <span class="detail-price">${{ item.price }}</span>
+
+            <div class="divider" style="margin: 0; margin-bottom: 2rem; width: 40px;"></div>
+
+            <p class="detail-description">
+                {{ item.description }}
+            </p>
 
             {% if item.is_available %}
-            <button class="order-button">Add to Order</button>
+            <button class="btn-primary" style="cursor: pointer; border: none;">Add to Collection</button>
             {% else %}
-            <p class="unavailable-notice">Currently Unavailable</p>
+            <p class="text-secondary" style="font-style: italic;">Currently Unavailable</p>
             {% endif %}
+
+            <div style="margin-top: 4rem;">
+                <a href="{% url 'menu_list' %}" class="card-link" style="font-size: 0.7rem;">&larr; Back to Menu</a>
+            </div>
         </div>
     </div>
 </div>
-
 {% endblock %}

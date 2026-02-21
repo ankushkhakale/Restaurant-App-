@@ -1,40 +1,64 @@
 {% extends 'base.html' %}
 
-{% block title %}Menu - Restaurant App{% endblock %}
+{% block title %}Menu | Gourmet Haven{% endblock %}
 
 {% block content %}
-<div class="menu-container">
-    <h1>Our Menu</h1>
+<div class="hero">
+    <div class="hero-content">
+        <h1>Culinaria</h1>
+        <p>Explore our seasonal collection of meticulously crafted dishes, prepared with only the finest artisan
+            ingredients.</p>
+        <a href="#menu-start" class="btn-primary">View the Collection</a>
+    </div>
+</div>
+
+<div class="container" id="menu-start">
+    <div class="section-title">
+        <h2>Seasonal Menu</h2>
+        <div class="divider"></div>
+    </div>
 
     {% if categories %}
     {% for category in categories %}
     <section class="menu-category">
-        <h2>{{ category.name }}</h2>
-        <p class="category-description">{{ category.description }}</p>
+        <div class="category-header">
+            <h3>{{ category.name }}</h3>
+            <p class="category-description">{{ category.description }}</p>
+        </div>
 
-        <div class="menu-items">
+        <div class="menu-grid">
             {% for item in category.items.all %}
             {% if item.is_available %}
-            <div class="menu-item-card">
-                {% if item.image %}
-                <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-item-image">
-                {% endif %}
-                <div class="menu-item-details">
-                    <h3><a href="{% url 'menu_detail' item.pk %}">{{ item.name }}</a></h3>
-                    <p class="price">${{ item.price }}</p>
-                    <p class="description">{{ item.description|truncatewords:20 }}</p>
+            <article class="menu-card">
+                <div class="card-img">
+                    {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="{{ item.name }}" loading="lazy">
+                    {% else %}
+                    <div
+                        style="width:100%; height:100%; background:#222; display:flex; align-items:center; justify-content:center; color:#444; font-size:4rem;">
+                        🍽️</div>
+                    {% endif %}
                 </div>
-            </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h4>{{ item.name }}</h4>
+                        <span class="price">${{ item.price }}</span>
+                    </div>
+                    <p>{{ item.description|truncatewords:20 }}</p>
+                    <a href="{% url 'menu_detail' item.pk %}" class="card-link">View Details</a>
+                </div>
+            </article>
             {% endif %}
             {% empty %}
-            <p>No items available in this category.</p>
+            <p class="text-secondary">Our culinary team is currently refining this selection.</p>
             {% endfor %}
         </div>
     </section>
     {% endfor %}
     {% else %}
-    <p>No categories found.</p>
+    <div style="text-align: center; padding: 5rem 0;">
+        <p class="text-secondary">Our menu is currently undergoing its seasonal refinement. Please check back soon.</p>
+    </div>
     {% endif %}
 </div>
-
 {% endblock %}
