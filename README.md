@@ -67,7 +67,3 @@ Follow these instructions to get a copy of the project up and running on your lo
     ```bash
     python manage.py runserver
     ```
-
-8.  **Visit the app**
-    -   Public Site: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-    -   Admin Panel: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
