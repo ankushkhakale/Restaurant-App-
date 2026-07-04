@@ -15,7 +15,6 @@ A simple and elegant restaurant management system built with Django. This applic
 -   **Backend**: Python, Django 5.x
 -   **Database**: SQLite (Development)
 -   **Frontend**: HTML5, CSS3
--   **Image Handling**: Pillow
 
 ## 🚀 Getting Started
 
