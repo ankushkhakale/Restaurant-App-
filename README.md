@@ -1,4 +1,4 @@
-hi# 🍽️ Restaurant App
+# 🍽️ Restaurant App
 
 A simple and elegant restaurant management system built with Django. This application allows restaurant owners to manage their menu and customers to view available dishes.
 
@@ -12,7 +12,7 @@ A simple and elegant restaurant management system built with Django. This applic
 
 ## 🛠️ Tech Stack
 
--   **Backend**: Python, Django 5.x
+-   **Backend**: Python, Django
 -   **Database**: SQLite (Development)
 -   **Frontend**: HTML5, CSS3
 
@@ -66,5 +66,3 @@ Follow these instructions to get a copy of the project up and running on your lo
     ```bash
     python manage.py runserver
     ```
-
-project work still pending 
